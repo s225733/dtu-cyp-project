@@ -5,7 +5,7 @@
 set -euo pipefail
 
 cd "$(dirname "$0")"
-VALUES_FILE="experiments/mlp_sweep.csv"
+VALUES_FILE="${VALUES_FILE:-experiments/mlp_sweep.csv}"
 [[ -f "$VALUES_FILE" ]] || { echo "Missing $VALUES_FILE" >&2; exit 1; }
 [[ -f finetune.sh ]] || { echo "Missing finetune.sh" >&2; exit 1; }
 [[ -d outputs ]] || { echo "Missing outputs/: create it once with mkdir -p outputs" >&2; exit 1; }
