@@ -1,0 +1,2 @@
+id,task,lr,dropout,hidden_dim,layers,batch_size,weight_decay,epochs
+reg_extreme_lr01,regression,0.1,0.5,160,3,64,0.01,100
