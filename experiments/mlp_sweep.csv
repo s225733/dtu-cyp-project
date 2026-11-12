@@ -1,5 +1,5 @@
 id,task,lr,dropout,hidden_dim,layers,batch_size,weight_decay,epochs
-r2_drop03,regression,0.001,0.3,256,3,64,0.01,100,
+r2_drop03,regression,0.001,0.3,256,3,64,0.01,100
 r2_drop05,regression,0.001,0.5,256,3,64,0.01,100
 r2_hidden128,regression,0.001,0.4,128,3,64,0.01,100
 r2_hidden384,regression,0.001,0.4,384,3,64,0.01,100
