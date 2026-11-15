@@ -3,6 +3,8 @@ import torch
 
 from chemprop import nn, models, data
 
+learningRate = 0.001
+
 #task = regression or classification
 def create_model(task, freeze=True):
     #load pretrained CheMeleon model
@@ -25,8 +27,18 @@ def create_model(task, freeze=True):
 
     metric_list = [nn.metrics.RMSE(), nn.metrics.MAE()]
 
-    model_mpnn = models.MPNN(mp,agg,fnn,batch_norm=False, metrics=metric_list)
+    model_mpnn = models.MPNN(
+        mp,
+        agg,
+        fnn,
+        batch_norm=False,     
+        init_lr=learningRate,
+        max_lr=learningRate,
+        final_lr=learningRate,
+        metrics=metric_list
+    )
 
     print(f"CheMeleon model for {task} created successfully, the model is:", model_mpnn)
-
+    print("\nModel predictor:")
+    print(model_mpnn.predictor)
     return model_mpnn

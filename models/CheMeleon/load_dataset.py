@@ -19,7 +19,6 @@ def loadData(task):
     def create_datapoints(df):
         return [data.MoleculeDatapoint.from_smi(smi, y) for smi, y in zip(df["SMILES"], df[targets].to_numpy(dtype=float))]
 
-
     trainDatapoints = create_datapoints(trainData)
     validDatapoints = create_datapoints(validData)
     testDatapoints = create_datapoints(testData)
