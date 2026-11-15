@@ -35,3 +35,4 @@ READOUTS = {'linear': LinearReadout, 'mlp': MLPReadout}
 def build_readout(cfg, in_dim, n_targets):
     options = {k: v for k, v in cfg.items() if k != 'type'}
     return READOUTS[cfg.type](in_dim, n_targets, **options)
+
