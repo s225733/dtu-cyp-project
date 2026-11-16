@@ -1,0 +1,20 @@
+# @package _global_
+
+defaults:
+  - override /readout: mlp
+
+model:
+  name: chemeleon
+  type: chemeleon
+  checkpoint: chemeleon/chemeleon_mp.pt
+  freeze_encoder: false
+  encoder_lr: 1.0e-5
+  readout_lr: 1.0e-3
+
+
+
+train:
+  epochs: 100
+  batch_size: 64
+  weight_decay: 1.0e-2
+  grad_clip: 10.0
