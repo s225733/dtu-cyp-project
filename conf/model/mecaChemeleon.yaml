@@ -7,14 +7,15 @@ model:
   name: chemeleon
   type: chemeleon
   checkpoint: chemeleon/chemeleon_mp.pt
-  freeze_encoder: false
+  task: ${task}
+  freeze_encoder: true
   encoder_lr: 1.0e-5
   readout_lr: 1.0e-3
 
 
 
 train:
-  epochs: 100
+  epochs: 2
   batch_size: 64
   weight_decay: 1.0e-2
   grad_clip: 10.0

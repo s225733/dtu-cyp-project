@@ -5,6 +5,6 @@ forward(batch) -> [batch, n_targets] predictions. Readout heads are in models/re
 The LightGBM baseline (models/gbm.py, model.type=lightgbm) is handled separately in finetune.py."""
 from models.atom_jepa import AtomJEPAModel
 from models.baselines import FeatureModel
-from models.mecaChemelon import ChemeleonModel
+from models.mecaChemeleon import CheMeleonModel
 
-MODELS = {'atom_jepa': AtomJEPAModel, 'features': FeatureModel, 'chemeleon': ChemeleonModel}
+MODELS = {'atom_jepa': AtomJEPAModel, 'features': FeatureModel, 'chemeleon': CheMeleonModel}

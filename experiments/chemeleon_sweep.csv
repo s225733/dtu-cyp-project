@@ -1,0 +1,10 @@
+
+id,task,freeze,encoder_lr,readout_lr,dropout,hidden,layers,batch,weight_decay,epochs
+cls_frozen,classification,true,1e-5,1e-3,0.1,512,3,32,1e-4,2
+cls_full,classification,false,1e-5,1e-3,0.1,512,3,32,1e-4,2
+cls_full_lr,classification,false,1e-4,1e-3,0.1,512,3,32,1e-4,2
+cls_dropout,classification,false,1e-5,1e-3,0.3,512,3,32,1e-4,2
+reg_frozen,regression,true,1e-5,1e-3,0.1,512,3,32,1e-4,2
+reg_full,regression,false,1e-5,1e-3,0.1,512,3,32,1e-4,2
+reg_full_lr,regression,false,1e-4,1e-3,0.1,512,3,32,1e-4,2
+reg_dropout,regression,false,1e-5,1e-3,0.3,512,3,32,1e-4,2

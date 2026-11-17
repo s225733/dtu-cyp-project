@@ -1,0 +1,30 @@
+
+defaults:
+  model: mecaChemeleon
+  readout: mlp
+  task: regression
+  device: cpu
+  epochs: 20
+  batch_size: 32
+
+experiments:
+  - name: frozen
+    model.freeze_encoder: true
+
+  - name: full_finetuning
+    model.freeze_encoder: true
+    model.encoder_lr: 1e-5
+
+  - name: higher_learning_rate
+    model.freeze_encoder: true
+    model.encoder_lr: 1e-4
+
+  - name: higher_dropout
+    model.freeze_encoder: true
+    model.encoder_lr: 1e-5
+    readout.dropout: 0.3
+
+  - name: smaller_batch
+    model.freeze_encoder: true
+    model.encoder_lr: 1e-5
+    train.batch_size: 16
