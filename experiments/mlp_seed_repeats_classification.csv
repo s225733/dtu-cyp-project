@@ -1,0 +1,11 @@
+id,task,lr,dropout,hidden_dim,layers,batch_size,weight_decay,epochs,seed
+rep_cls512_s13,classification,0.0012,0.1,512,3,64,0.01,100,13
+rep_cls512_s21,classification,0.0012,0.1,512,3,64,0.01,100,21
+rep_cls512_s37,classification,0.0012,0.1,512,3,64,0.01,100,37
+rep_cls512_s73,classification,0.0012,0.1,512,3,64,0.01,100,73
+rep_cls512_s101,classification,0.0012,0.1,512,3,64,0.01,100,101
+rep_cls544_s13,classification,0.0012,0.1,544,3,64,0.01,100,13
+rep_cls544_s21,classification,0.0012,0.1,544,3,64,0.01,100,21
+rep_cls544_s37,classification,0.0012,0.1,544,3,64,0.01,100,37
+rep_cls544_s73,classification,0.0012,0.1,544,3,64,0.01,100,73
+rep_cls544_s101,classification,0.0012,0.1,544,3,64,0.01,100,101

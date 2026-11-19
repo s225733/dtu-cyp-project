@@ -1,0 +1,11 @@
+id,task,lr,dropout,hidden_dim,layers,batch_size,weight_decay,epochs,seed
+rep_reg160_s13,regression,0.001,0.5,160,3,64,0.01,100,13
+rep_reg160_s21,regression,0.001,0.5,160,3,64,0.01,100,21
+rep_reg160_s37,regression,0.001,0.5,160,3,64,0.01,100,37
+rep_reg160_s73,regression,0.001,0.5,160,3,64,0.01,100,73
+rep_reg160_s101,regression,0.001,0.5,160,3,64,0.01,100,101
+rep_reg256_s13,regression,0.001,0.45,256,3,64,0.1,100,13
+rep_reg256_s21,regression,0.001,0.45,256,3,64,0.1,100,21
+rep_reg256_s37,regression,0.001,0.45,256,3,64,0.1,100,37
+rep_reg256_s73,regression,0.001,0.45,256,3,64,0.1,100,73
+rep_reg256_s101,regression,0.001,0.45,256,3,64,0.1,100,101
