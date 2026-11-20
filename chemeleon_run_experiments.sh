@@ -19,9 +19,9 @@ while IFS=, read -r ID TASK FREEZE ENCODER_LR READOUT_LR DROPOUT HIDDEN LAYERS B
 
     export MODEL=mecaChemeleon
     export TASK
-    export OVERRIDES="model.freeze_encoder=$FREEZE model.readout_lr=$LR readout.dropout=$DROPOUT readout.hidden_dim=$HIDDEN readout.num_layers=$LAYERS train.batch_size=$BATCH train.weight_decay=$WEIGHT_DECAY train.epochs=$EPOCHS hydra.run.dir=runs/$TASK/mecaChemeleon/$ID/\${now:%Y-%m-%d_%H-%M-%S}"
+    export OVERRIDES="model.freeze_encoder=$FREEZE model.encoder_lr=$ENCODER_LR model.readout_lr=$READOUT_LR readout.dropout=$DROPOUT readout.hidden_dim=$HIDDEN readout.num_layers=$LAYERS train.batch_size=$BATCH train.weight_decay=$WEIGHT_DECAY train.epochs=$EPOCHS hydra.run.dir=runs/$TASK/mecaChemeleon/$ID/\${now:%Y-%m-%d_%H-%M-%S}"
 
-    echo "$ID | $TASK | $FREEZE | lr=$LR dropout=$DROPOUT hidden=$HIDDEN layers=$LAYERS batch=$BATCH decay=$WEIGHT_DECAY epochs=$EPOCHS"
+    echo "$ID | $TASK | $FREEZE | encoderlr=$ENCODER_LR readoutlr=$READOUT_LR dropout=$DROPOUT hidden=$HIDDEN layers=$LAYERS batch=$BATCH decay=$WEIGHT_DECAY epochs=$EPOCHS"
     if [[ "${DRY_RUN:-0}" != 1 ]]; then
         bsub -env all < finetune.sh
     fi
