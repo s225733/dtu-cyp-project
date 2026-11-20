@@ -2,7 +2,7 @@
 # Submit one LSF job per row in experiments/mlp_sweep.csv.
 # Usage: DRY_RUN=1 bash run_experiments.sh   (preview)
 #        bash run_experiments.sh             (submit)
-set -euo pipefail
+set -euo pipefail   
 
 cd "$(dirname "$0")"
 VALUES_FILE="experiments/chemeleon_sweep.csv"
@@ -11,7 +11,7 @@ VALUES_FILE="experiments/chemeleon_sweep.csv"
 [[ -d outputs ]] || { echo "Missing outputs/: create it once with mkdir -p outputs" >&2; exit 1; }
 
 count=0
-while IFS=, read -r ID TASK LR DROPOUT HIDDEN LAYERS BATCH WEIGHT_DECAY EPOCHS || [[ -n "${ID:-}" ]]; do
+while IFS=, read -r ID TASK FREEZE ENCODER_LR READOUT_LR DROPOUT HIDDEN LAYERS BATCH WEIGHT_DECAY EPOCHS || [[ -n "${ID:-}" ]]; do
     [[ -z "$ID" || "$ID" == id || "$ID" == \#* ]] && continue
     [[ "$ID" =~ ^[a-zA-Z0-9_-]+$ ]] || { echo "Invalid ID: $ID" >&2; exit 1; }
     [[ "$TASK" == regression || "$TASK" == classification ]] || { echo "Invalid task: $TASK" >&2; exit 1; }
