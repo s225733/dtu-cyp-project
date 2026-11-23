@@ -1,0 +1,13 @@
+id,task,freeze_encoder,encoder_lr,readout_lr,dropout,hidden_dim,layers,batch_size,weight_decay,epochs
+aje1_reg_frozen_ref,regression,true,0.00001,0.001,0.1,512,3,8,0.0001,20
+aje1_reg_frozen_lr_low,regression,true,0.00001,0.0003,0.1,512,3,8,0.0001,20
+aje1_reg_frozen_lr_high,regression,true,0.00001,0.003,0.1,512,3,8,0.0001,20
+aje1_reg_full_ref,regression,false,0.00001,0.001,0.1,512,3,8,0.0001,20
+aje1_reg_full_enc_low,regression,false,0.000003,0.001,0.1,512,3,8,0.0001,20
+aje1_reg_full_enc_high,regression,false,0.00003,0.001,0.1,512,3,8,0.0001,20
+aje1_cls_frozen_ref,classification,true,0.00001,0.001,0.1,512,3,8,0.0001,20
+aje1_cls_frozen_lr_low,classification,true,0.00001,0.0003,0.1,512,3,8,0.0001,20
+aje1_cls_frozen_lr_high,classification,true,0.00001,0.003,0.1,512,3,8,0.0001,20
+aje1_cls_full_ref,classification,false,0.00001,0.001,0.1,512,3,8,0.0001,20
+aje1_cls_full_enc_low,classification,false,0.000003,0.001,0.1,512,3,8,0.0001,20
+aje1_cls_full_enc_high,classification,false,0.00003,0.001,0.1,512,3,8,0.0001,20
