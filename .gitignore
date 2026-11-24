@@ -3,7 +3,7 @@
 __pycache__/
 *.pyc
 data/
-
+runs/
 outputs/*
 !outputs/.gitkeep
 mlp_experiments.json

@@ -15,7 +15,7 @@ set -euo pipefail
 # MODEL: atom_jepa | morgan_mlp | rdkit_mlp | morgan_rdkit_mlp | morgan_rdkit_lgbm (see conf/model/)
 # TASK: regression | classification
 # OVERRIDES: extra Hydra overrides separated by spaces, e.g. OVERRIDES="train.epochs=50"
-MODEL="${MODEL:-atom_jepa}"
+MODEL="${MODEL:-mecaChemeleon}"
 TASK="${TASK:-regression}"
 OVERRIDES="${OVERRIDES:-}"
 

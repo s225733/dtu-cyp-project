@@ -13,7 +13,6 @@ model:
   readout_lr: 1.0e-3
 
 
-
 train:
   epochs: 2
   batch_size: 64
