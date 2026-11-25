@@ -1,17 +1,19 @@
 #!/usr/bin/env bash
-# Submit one LSF job per row in experiments/mlp_sweep.csv.
-# Usage: DRY_RUN=1 bash run_experiments.sh   (preview)
-#        bash run_experiments.sh             (submit)
+# Submit one LSF job per row in the CheMeleon sweep CSV.
+# Usage: DRY_RUN=1 bash chemeleon_run_experiments.sh   (preview)
+#        bash chemeleon_run_experiments.sh             (submit)
 set -euo pipefail   
 
 cd "$(dirname "$0")"
-VALUES_FILE="${VALUES_FILE:-experiments/chemeleon_readout_lr.csv}"
+VALUES_FILE="${VALUES_FILE:-experiments/chemeleon_sweep_2.csv}"
 [[ -f "$VALUES_FILE" ]] || { echo "Missing $VALUES_FILE" >&2; exit 1; }
 [[ -f finetune.sh ]] || { echo "Missing finetune.sh" >&2; exit 1; }
 [[ -d outputs ]] || { echo "Missing outputs/: create it once with mkdir -p outputs" >&2; exit 1; }
 
 count=0
 while IFS=, read -r ID TASK FREEZE ENCODER_LR READOUT_LR DROPOUT HIDDEN LAYERS BATCH WEIGHT_DECAY EPOCHS || [[ -n "${ID:-}" ]]; do
+    ID="${ID%$'\r'}"
+    EPOCHS="${EPOCHS%$'\r'}"
     [[ -z "$ID" || "$ID" == id || "$ID" == \#* ]] && continue
     [[ "$ID" =~ ^[a-zA-Z0-9_-]+$ ]] || { echo "Invalid ID: $ID" >&2; exit 1; }
     [[ "$TASK" == regression || "$TASK" == classification ]] || { echo "Invalid task: $TASK" >&2; exit 1; }
