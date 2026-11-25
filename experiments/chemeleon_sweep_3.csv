@@ -1,0 +1,17 @@
+id,task,freeze,encoder_lr,readout_lr,dropout,hidden,layers,batch,weight_decay,epochs,seed
+cls_full_s123,classification,false,1e-5,1e-3,0.1,512,3,32,1e-4,100,123
+cls_layers_5_s123,classification,false,1e-5,1e-3,0.1,512,5,32,1e-4,100,123
+cls_batch_64_s123,classification,false,1e-5,1e-3,0.1,512,3,64,1e-4,100,123
+cls_wd_1e5_s123,classification,false,1e-5,1e-3,0.1,512,3,32,1e-5,100,123
+reg_full_s123,regression,false,1e-5,1e-3,0.1,512,3,32,1e-4,100,123
+reg_layers_4_s123,regression,false,1e-5,1e-3,0.1,512,4,32,1e-4,100,123
+reg_batch_64_s123,regression,false,1e-5,1e-3,0.1,512,3,64,1e-4,100,123
+reg_wd_1e2_s123,regression,false,1e-5,1e-3,0.1,512,3,32,1e-2,100,123
+cls_full_s456,classification,false,1e-5,1e-3,0.1,512,3,32,1e-4,100,456
+cls_layers_5_s456,classification,false,1e-5,1e-3,0.1,512,5,32,1e-4,100,456
+cls_batch_64_s456,classification,false,1e-5,1e-3,0.1,512,3,64,1e-4,100,456
+cls_wd_1e5_s456,classification,false,1e-5,1e-3,0.1,512,3,32,1e-5,100,456
+reg_full_s456,regression,false,1e-5,1e-3,0.1,512,3,32,1e-4,100,456
+reg_layers_4_s456,regression,false,1e-5,1e-3,0.1,512,4,32,1e-4,100,456
+reg_batch_64_s456,regression,false,1e-5,1e-3,0.1,512,3,64,1e-4,100,456
+reg_wd_1e2_s456,regression,false,1e-5,1e-3,0.1,512,3,32,1e-2,100,456

@@ -17,6 +17,7 @@ set -euo pipefail
 # OVERRIDES: extra Hydra overrides separated by spaces, e.g. OVERRIDES="train.epochs=50"
 MODEL="${MODEL:-mecaChemeleon}"
 TASK="${TASK:-regression}"
+SEED="${SEED:-42}"
 OVERRIDES="${OVERRIDES:-}"
 
 # Submit from the starter directory. Set up this venv BEFORE submitting.
@@ -36,4 +37,4 @@ for f in train val test; do
     [[ -f "data/$TASK/$f.csv" ]] || { echo "Missing data/$TASK/$f.csv; run prepare_data.sh first" >&2; exit 2; }
 done
 # Results go to runs/<task>/<model>/<timestamp>/ (set in conf/config.yaml).
-python -u finetune.py model="$MODEL" task="$TASK" seed=42 device=cuda $OVERRIDES
+python -u finetune.py model="$MODEL" task="$TASK" seed="$SEED" device=cuda $OVERRIDES
