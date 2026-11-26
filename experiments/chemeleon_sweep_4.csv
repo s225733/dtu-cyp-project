@@ -1,0 +1,7 @@
+id,task,freeze,encoder_lr,readout_lr,dropout,hidden,layers,batch,weight_decay,epochs,seed
+reg_wd_1e3_s123,regression,false,1e-5,1e-3,0.1,512,3,32,1e-3,100,123
+reg_wd_3e3_s123,regression,false,1e-5,1e-3,0.1,512,3,32,3e-3,100,123
+reg_wd_3e2_s123,regression,false,1e-5,1e-3,0.1,512,3,32,3e-2,100,123
+reg_wd_1e3_s456,regression,false,1e-5,1e-3,0.1,512,3,32,1e-3,100,456
+reg_wd_3e3_s456,regression,false,1e-5,1e-3,0.1,512,3,32,3e-3,100,456
+reg_wd_3e2_s456,regression,false,1e-5,1e-3,0.1,512,3,32,3e-2,100,456
